@@ -1,16 +1,11 @@
 package main
 
 import (
+	"example/my-app/fileOps"
 	"fmt"
-	"os"
 )
 
 const expenseFileName = "ExpenseData.txt"
-
-func writeToExpenseFile(ebt, eat, ratio float64) {
-	resString := fmt.Sprintf("%0.2f \n%0.2f \n%0.2f", ebt, eat, ratio)
-	os.WriteFile(expenseFileName, []byte(resString), 0644)
-}
 
 func calculateProfit() {
 	revenue := getInput("Enter the revenue generated: ")
@@ -24,15 +19,7 @@ func calculateProfit() {
 
 	ebt, eat, ratio := calculateEBTs(expenses, revenue, tax)
 
-	writeToExpenseFile(ebt, eat, ratio)
-}
-
-func getInput(statement string) float64 {
-	fmt.Println(statement)
-	var inputValue float64
-	fmt.Scanln(&inputValue)
-
-	return inputValue
+	fileOps.WriteFloatsToFileOperation(expenseFileName, ebt, eat, ratio)
 }
 
 func calculateEBTs(expenses, revenue, tax float64) (float64, float64, float64) {

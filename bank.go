@@ -1,55 +1,31 @@
 package main
 
 import (
-	"errors"
 	"fmt"
-	"os"
-	"strconv"
+
+	"example/my-app/fileOps"
+
+	"github.com/Pallinder/go-randomdata"
 )
 
-const accountBalanceFileName = "balance.txt"
-
-func readFileOperation() (float64, error) {
-	data, error := os.ReadFile(accountBalanceFileName)
-
-	if error != nil {
-		errorString := fmt.Sprintln(`There was an error reading the file, please try again`)
-		return 1000.0, errors.New(errorString)
-	}
-	balanceText := string(data)
-	balance, error := strconv.ParseFloat(balanceText, 64)
-
-	if error != nil {
-		errorString := fmt.Sprintln(`There was an error parsing the balance, please try again`)
-		return 1000.0, errors.New(errorString)
-	}
-
-	return balance, nil
-}
-
-func writeToFileOperation(balance float64) {
-	balanceString := fmt.Sprintln(balance)
-	os.WriteFile(accountBalanceFileName, []byte(balanceString), 0644)
-}
+const accountBalanceFileName = "Balance.txt"
 
 func bankOperations() {
-	accountBalance, error := readFileOperation()
+	accountBalance, error := fileOps.ReadFloatFileOperation(accountBalanceFileName)
 	if error != nil {
 		fmt.Println(`ERROR:`)
 		fmt.Println(error.Error())
 		fmt.Println(`-----------`)
+
+		fmt.Println("Using the default balance")
+		fileOps.WriteFloatToFileOperation(accountBalanceFileName, accountBalance)
 		return
 		// panic(error.Error())
 	}
 	var choice int
 
 	for choice != 4 {
-		fmt.Println(`Welcome to the bank service
-		What do you like to do?
-		1. Check you bank balance
-		2. Make a deposit to the account
-		3. Withdraw some money
-		4. Exit`)
+		initCallFromBank()
 
 		fmt.Scan(&choice)
 		switch choice {
@@ -67,7 +43,7 @@ func bankOperations() {
 
 			accountBalance += amountToDeposit
 			fmt.Printf("You have bank balance of %0.2f\n", accountBalance)
-			writeToFileOperation(accountBalance)
+			fileOps.WriteFloatToFileOperation(accountBalanceFileName, accountBalance)
 		case 3:
 			fmt.Println("How much do you want to withdraw")
 			var amountToWidthraw float64
@@ -84,11 +60,21 @@ func bankOperations() {
 
 			accountBalance -= amountToWidthraw
 			fmt.Printf("You have bank balance of %0.2f\n", accountBalance)
-			writeToFileOperation(accountBalance)
+			fileOps.WriteFloatToFileOperation(accountBalanceFileName, accountBalance)
 		case 4:
 			fmt.Println("You exited")
 		default:
 			return
 		}
 	}
+}
+
+func initCallFromBank() {
+	fmt.Println("Welcome to the bank service")
+	fmt.Printf("Call us 24/7 @%s\n", randomdata.PhoneNumber())
+	fmt.Println("What do you like to do?")
+	fmt.Println("1. Check you bank balance")
+	fmt.Println("2. Make a deposit to the account")
+	fmt.Println("3. Withdraw some money")
+	fmt.Println("4. Exit")
 }
