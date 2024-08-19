@@ -4,4 +4,5 @@ func main() {
 	calculateInvestmentReturn()
 	calculateProfit()
 	bankOperations()
+	structOperation()
 }
