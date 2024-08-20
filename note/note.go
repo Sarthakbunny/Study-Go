@@ -31,7 +31,7 @@ func (note *Note) Display() {
 	fmt.Println("Note Content: ", note.Content)
 }
 
-func (note *Note) WriteNoteToFile() error {
+func (note *Note) Save() error {
 	fileName := strings.ReplaceAll(note.Title, " ", "_")
 	fileName = strings.ToLower(fileName) + ".json"
 
