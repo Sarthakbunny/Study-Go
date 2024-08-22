@@ -6,4 +6,6 @@ func main() {
 	bankOperations()
 	structOperation()
 	notesAppOperation()
+	arrayPractice()
+	mapPractice()
 }
