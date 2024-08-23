@@ -1,16 +1,17 @@
-package main
+package profitcalculator
 
 import (
 	"example/my-app/fileOps"
+	"example/my-app/util"
 	"fmt"
 )
 
 const expenseFileName = "ExpenseData.txt"
 
-func calculateProfit() {
-	revenue := getInput("Enter the revenue generated: ")
-	expenses := getInput("Enter the expenses occurred: ")
-	tax := getInput("Enter the tax rates calculated: ")
+func CalculateProfit() {
+	revenue := util.GetInput("Enter the revenue generated: ")
+	expenses := util.GetInput("Enter the expenses occurred: ")
+	tax := util.GetInput("Enter the tax rates calculated: ")
 
 	if revenue <= 0 || expenses <= 0 || tax <= 0 {
 		fmt.Println(`The input value must be greater than or equal to 0`)

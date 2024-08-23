@@ -1,4 +1,4 @@
-package main
+package mapPractice
 
 import "fmt"
 
@@ -8,7 +8,7 @@ func (m floatMap) outputMap() {
 	fmt.Println(m)
 }
 
-func mapPractice() {
+func MapPractice() {
 	urlCollection := map[string]string{
 		"Google": "http://www.google.com",
 		"AWS":    "http://aws.amazon",

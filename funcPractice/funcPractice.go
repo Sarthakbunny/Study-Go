@@ -1,4 +1,4 @@
-package main
+package funcPractice
 
 import "fmt"
 
@@ -6,7 +6,7 @@ type transformFn func(int) int
 
 // type anotherFn func(int, []string, map[string][]int) ([]int, string)
 
-func funcPractice() {
+func FuncPractice() {
 	array := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
 	doubledArray := transformArray(&array, double)
 	tripleddArray := transformArray(&array, triple)

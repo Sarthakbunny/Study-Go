@@ -1,8 +1,8 @@
-package main
+package util
 
 import "fmt"
 
-func getInput(statement string) float64 {
+func GetInput(statement string) float64 {
 	fmt.Println(statement)
 	var inputValue float64
 	fmt.Scanln(&inputValue)

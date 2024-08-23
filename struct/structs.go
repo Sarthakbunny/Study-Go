@@ -1,4 +1,4 @@
-package main
+package structure
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"example/my-app/user"
 )
 
-func structOperation() {
+func StructOperation() {
 	var name user.Str = "MyName"
 	name.Log()
 

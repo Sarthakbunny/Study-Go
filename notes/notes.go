@@ -1,4 +1,4 @@
-package main
+package notes
 
 import (
 	"bufio"
@@ -36,7 +36,7 @@ func getTodoData() string {
 	return content
 }
 
-func notesAppOperation() {
+func NotesAppOperation() {
 	printSomething(1)
 	printSomething(1.5)
 	printSomething("Anything")

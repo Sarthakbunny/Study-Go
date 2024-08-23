@@ -1,4 +1,4 @@
-package main
+package arrayPractice
 
 import "fmt"
 
@@ -8,7 +8,7 @@ type Product struct {
 	price float64
 }
 
-func arrayPractice() {
+func ArrayPractice() {
 	task1 := [3]string{"Hobby1", "Hobby2", "Hobby3"}
 	fmt.Println(task1)
 

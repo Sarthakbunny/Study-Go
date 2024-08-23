@@ -1,16 +1,17 @@
-package main
+package investmentcalculator
 
 import (
+	"example/my-app/util"
 	"fmt"
 	"math"
 )
 
 const inflationRate = 2.5
 
-func calculateInvestmentReturn() {
-	investedAmount := getInput("Enter the investment amount: ")
-	expectedReturnRate := getInput("Enter the expected return rate: ")
-	years := getInput("Enter the years of investment: ")
+func CalculateInvestmentReturn() {
+	investedAmount := util.GetInput("Enter the investment amount: ")
+	expectedReturnRate := util.GetInput("Enter the expected return rate: ")
+	years := util.GetInput("Enter the years of investment: ")
 
 	finalValue, futureRealValue := calculateReturnValues(investedAmount, expectedReturnRate, years)
 
