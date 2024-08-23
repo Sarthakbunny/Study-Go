@@ -8,4 +8,5 @@ func main() {
 	notesAppOperation()
 	arrayPractice()
 	mapPractice()
+	funcPractice()
 }
