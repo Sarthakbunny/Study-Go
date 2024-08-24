@@ -3,15 +3,12 @@ package main
 import (
 	"example/my-app/Fundamentals/arrayPractice"
 	"example/my-app/Fundamentals/bank"
-	"example/my-app/Fundamentals/fileOps"
 	"example/my-app/Fundamentals/funcPractice"
 	investmentcalculator "example/my-app/Fundamentals/investment_calculator"
 	"example/my-app/Fundamentals/mapPractice"
 	"example/my-app/Fundamentals/notes"
-	"example/my-app/Fundamentals/price"
 	profitcalculator "example/my-app/Fundamentals/profitCalculator"
 	structure "example/my-app/Fundamentals/struct"
-	"fmt"
 )
 
 func main() {
@@ -23,12 +20,4 @@ func main() {
 	arrayPractice.ArrayPractice()
 	mapPractice.MapPractice()
 	funcPractice.FuncPractice()
-	taxes := []float64{10, 30, 50}
-
-	for _, tax := range taxes {
-		fileManager := fileOps.New("prices.txt", fmt.Sprintf("converted_%.0f.json", tax))
-		// cmdManager := cmdmanager.New()
-		priceObject := price.NewPrice(tax, fileManager)
-		priceObject.Process()
-	}
 }

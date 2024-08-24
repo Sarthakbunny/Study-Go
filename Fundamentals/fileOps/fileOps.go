@@ -81,13 +81,15 @@ func (fileManager FileManager) WriteJSON(data any) error {
 		return err
 	}
 
+	defer file.Close()
+
 	encoder := json.NewEncoder(file)
 	err = encoder.Encode(data)
 	if err != nil {
-		file.Close()
+		// file.Close()
 		fmt.Println("error while encoding: ", err)
 		return err
 	}
-	file.Close()
+	// file.Close()
 	return nil
 }

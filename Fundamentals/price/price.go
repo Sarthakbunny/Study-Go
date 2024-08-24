@@ -4,6 +4,7 @@ import (
 	iomanager "example/my-app/Fundamentals/IOManager"
 	"example/my-app/Fundamentals/conversion"
 	"fmt"
+	"time"
 )
 
 type Price struct {
@@ -32,8 +33,15 @@ func (price *Price) LoadInputPrice() error {
 	return nil
 }
 
-func (price *Price) Process() {
-	price.LoadInputPrice()
+func (price *Price) Process(doneChan chan bool, errorChan chan error) {
+	err := price.LoadInputPrice()
+
+	// errorChan <- errors.New("An Error!")
+
+	if err != nil {
+		fmt.Println(err)
+		errorChan <- err
+	}
 
 	result := make(map[string]float64)
 	for _, priceRate := range price.InputPrice {
@@ -43,7 +51,13 @@ func (price *Price) Process() {
 	price.TaxIncludedPriceMap = result
 	fmt.Println(*price)
 
-	price.IOManager.WriteJSON(price)
+	time.Sleep(3 * time.Second)
+	err = price.IOManager.WriteJSON(price)
+	if err != nil {
+		fmt.Println(err)
+		errorChan <- err
+	}
+	doneChan <- true
 }
 
 func NewPrice(taxRate float64, iOManager iomanager.IOManager) *Price {
