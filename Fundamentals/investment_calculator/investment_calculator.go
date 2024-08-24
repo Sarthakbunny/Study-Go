@@ -1,7 +1,7 @@
 package investmentcalculator
 
 import (
-	"example/my-app/util"
+	"example/my-app/Fundamentals/util"
 	"fmt"
 	"math"
 )

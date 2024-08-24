@@ -2,8 +2,8 @@ package notes
 
 import (
 	"bufio"
-	"example/my-app/note"
-	"example/my-app/todo"
+	"example/my-app/Fundamentals/note"
+	"example/my-app/Fundamentals/todo"
 	"fmt"
 	"os"
 	"strings"

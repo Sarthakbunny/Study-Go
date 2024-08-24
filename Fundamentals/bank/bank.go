@@ -3,7 +3,7 @@ package bank
 import (
 	"fmt"
 
-	"example/my-app/fileOps"
+	"example/my-app/Fundamentals/fileOps"
 
 	"github.com/Pallinder/go-randomdata"
 )

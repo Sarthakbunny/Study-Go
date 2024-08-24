@@ -1,8 +1,8 @@
 package price
 
 import (
-	iomanager "example/my-app/IOManager"
-	"example/my-app/conversion"
+	iomanager "example/my-app/Fundamentals/IOManager"
+	"example/my-app/Fundamentals/conversion"
 	"fmt"
 )
 

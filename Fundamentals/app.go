@@ -1,16 +1,16 @@
 package main
 
 import (
-	"example/my-app/arrayPractice"
-	"example/my-app/bank"
-	"example/my-app/fileOps"
-	"example/my-app/funcPractice"
-	investmentcalculator "example/my-app/investment_calculator"
-	"example/my-app/mapPractice"
-	"example/my-app/notes"
-	"example/my-app/price"
-	profitcalculator "example/my-app/profitCalculator"
-	structure "example/my-app/struct"
+	"example/my-app/Fundamentals/arrayPractice"
+	"example/my-app/Fundamentals/bank"
+	"example/my-app/Fundamentals/fileOps"
+	"example/my-app/Fundamentals/funcPractice"
+	investmentcalculator "example/my-app/Fundamentals/investment_calculator"
+	"example/my-app/Fundamentals/mapPractice"
+	"example/my-app/Fundamentals/notes"
+	"example/my-app/Fundamentals/price"
+	profitcalculator "example/my-app/Fundamentals/profitCalculator"
+	structure "example/my-app/Fundamentals/struct"
 	"fmt"
 )
 

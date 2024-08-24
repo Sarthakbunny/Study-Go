@@ -3,7 +3,7 @@ package structure
 import (
 	"fmt"
 
-	"example/my-app/user"
+	"example/my-app/Fundamentals/user"
 )
 
 func StructOperation() {

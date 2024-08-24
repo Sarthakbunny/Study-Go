@@ -1,8 +1,8 @@
 package profitcalculator
 
 import (
-	"example/my-app/fileOps"
-	"example/my-app/util"
+	"example/my-app/Fundamentals/fileOps"
+	"example/my-app/Fundamentals/util"
 	"fmt"
 )
 
